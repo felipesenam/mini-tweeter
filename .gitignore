@@ -1,1 +1,12 @@
+.vs
+.vscode
+
 _env
+
+*.log
+*.pot
+*.pyc
+__pycache__
+*.sqlite3
+*.sql
+media
