@@ -9,4 +9,4 @@ _env
 __pycache__
 *.sqlite3
 *.sql
-media
+public
