@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Página inicial
+{% endblock title %}
+{% block content %}
+    <div class="mb-4">
+        <h4 class="text-light">Página inicial</h4>
+    </div>
+    <form id="tweet-form">
+        {% csrf_token %}
+        <div class="row form-group">
+            <div class="col">
+                <textarea class="form-control rounded-0"
+                          name="post"
+                          placeholder="O que está acontecendo?"
+                          required></textarea>
+            </div>
+        </div>
+        <div class="row justify-content-end form-group">
+            <div class="col-2">
+                <button id="tweet" type="submit" class="btn btn-sm btn-primary">Tweetar</button>
+            </div>
+        </div>
+    </form>
+    <div id="feed">
+        <!-- AJAX -->
+    </div>
+{% endblock content %}
+{% block scripts %}
+    <script src="{% static 'assets/feed/js/feed.js' %}"></script>
+{% endblock scripts %}

@@ -1,0 +1,90 @@
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h3>Mini-Twitter</h3>
+    </div>
+    <ul class="list-unstyled components">
+        <li class="active">
+            <a href="#"><i class="fas fa-home"></i> Página inicial</a>
+        </li>
+    </ul>
+    <ul id="user-profile" class="list-unstyled other" style="display: none;">
+        <li>
+            <div class="text-center">
+                <b id="username"></b>
+                <a id="logout" class="btn btn-danger"> Sair <i class="fas fa-sign-out-alt ml-1"></i></a>
+            </div>
+        </li>
+    </ul>
+    <ul id="user-login" class="list-unstyled other" style="display: none;">
+        <li>
+            <div class="text-center">
+                <button type="button"
+                        class="btn btn-primary w-100 my-2"
+                        data-toggle="modal"
+                        data-target="#login-modal">
+                    Fazer login
+                </button>
+            </div>
+        </li>
+        <li>
+            <div class="text-center">
+                <button type="button"
+                        class="btn btn-secondary w-100 my-2"
+                        data-toggle="modal"
+                        data-target="#signup-modal">
+                    Crie sua conta
+                </button>
+            </div>
+        </li>
+    </ul>
+</nav>
+<div id="login-modal"
+     class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="login-modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="login-modal-label"class="modal-title">Fazer login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="login-form" action="#" method="post">
+                    {% csrf_token %}
+                    <p id="login-feedback-message" class="text-danger"></p>
+                    {% for field in login_form %}{{ field }}{% endfor %}
+                    <button id="login" type="submit" class="w-100 h-100 p-3 border-0">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="signup-modal"
+     class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="signup-modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="signup-modal-label"class="modal-title">Inscrever-se</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="signup-form" action="#" method="post">
+                    {% csrf_token %}
+                    <p id="signup-feedback-message" class="text-danger"></p>
+                    {% for field in signup_form %}{{ field }}{% endfor %}
+                    <button id="signup" type="submit" class="w-100 h-100 p-3 border-0">Criar conta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

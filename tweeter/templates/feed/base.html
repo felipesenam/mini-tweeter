@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        {% include 'base.head.html' %}
+        {% block head %}
+        {% endblock head %}
+        <title>
+            {% block title %}
+            {% endblock title %}
+            - Mini-Tweeter
+        </title>
+        {% block styles %}
+        {% endblock styles %}
+    </head>
+    <body>
+        <!-- Content -->
+        <div class="wrapper">
+            <!-- Navbar -->
+            {% include 'base.navbar.html' %}
+            <div id="content">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+        <!-- Footer -->
+        {% include 'base.footer.html' %}
+        <!-- Scripts -->
+        {% include 'base.scripts.html' %}
+        {% block scripts %}
+        {% endblock scripts %}
+    </body>
+</html>

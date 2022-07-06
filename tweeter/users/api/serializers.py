@@ -6,4 +6,10 @@ from users.models import UserImpl
 class UserImplSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserImpl
-        fields = ['name', 'email', 'birth_date', 'password']
+        fields = ['username', 'name', 'email', 'birth_date', 'password']
+
+
+class UserImplPublicSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserImpl
+        fields = ['name', 'username']

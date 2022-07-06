@@ -24,12 +24,14 @@ from users.api.viewsets import UserImplViewset
 router = routers.DefaultRouter()
 
 router.register('feed', PostsViewset, basename="feed")
-router.register('signup', UserImplViewset, basename="signup")
+router.register('auth', UserImplViewset, basename="auth")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
 
-    path('token', TokenObtainPairView.as_view()),
-    path('token/refresh', TokenRefreshView.as_view()),
+    path('', include("feed.urls")),
+
+    path('api/', include(router.urls)),
+    path('api/token/', TokenObtainPairView.as_view()),
+    path('api/token/refresh/', TokenRefreshView.as_view()),
 ]
