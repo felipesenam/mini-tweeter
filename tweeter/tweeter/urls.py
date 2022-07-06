@@ -24,7 +24,7 @@ from users.api.viewsets import UserImplViewset
 router = routers.DefaultRouter()
 
 router.register('feed', PostsViewset, basename="feed")
-router.register('auth', UserImplViewset, basename="auth")
+router.register('users', UserImplViewset, basename="auth")
 
 urlpatterns = [
     path('admin/', admin.site.urls),

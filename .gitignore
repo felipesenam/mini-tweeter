@@ -2,7 +2,7 @@
 .vscode
 
 _env
-
+00*.py
 *.log
 *.pot
 *.pyc
